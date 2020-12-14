@@ -6,7 +6,6 @@ import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 
 import java.net.InetSocketAddress;
-import java.util.Random;
 
 /**
  * Created by Zhong Mingyi on 2020/12/11.
@@ -23,7 +22,7 @@ public class NettyServer {
     }
 
     public void startServer() throws InterruptedException {
-        NettyServerHandler nettyServerHandler = new NettyServerHandler();
+        final NettyServerHandler nettyServerHandler = new NettyServerHandler();
         NioEventLoopGroup eventLoopGroup = new NioEventLoopGroup();//1、创建NioEventLoopGroup
         try {
             ServerBootstrap bootstrap = new ServerBootstrap();//2、创建ServerBootstrap
